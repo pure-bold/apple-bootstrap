@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The library: Apple built on Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  
+  	<style>
+		.placeholder-img, .pattern-bg {
+			background-color: #e5e5f7;
+			opacity: 0.8;
+			background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+		}
+		
+		.h-100vh {
+			height: 100vh;
+		}		
+		.h-175vh {
+			height: 175vh;
+		}
+		.ml-n20 {
+			margin-left: -20%;
+		}
+		
+		body {
+			overflow-x: hidden;
+		}
+		
+		.lead {
+			line-height: 1.25;
+			font-weight: 500;
+		}		
+		.lead-xl {
+			font-size: 1.5rem;
+		}
+		
+		
+		.display-1 {
+			font-size: 6.4rem;
+			line-height: 1;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			letter-spacing: -0.03em;
+		}
+		
+		.bg-body-secondary {
+			background-color: #f1f1f4!important;
+		}
+		.bg-body-tertiary {
+			background-color: #f5f5f7!important;
+		}
+		
+		img	 {
+			transition: opacity .3s ease-in-out;		
+		}
+	</style>
+  
+  </head>
+  <body class="bg-body-secondary">
+  
+  
+  
+
+<!-- 
+------- variables:
+even larger largest typo 
+
+
+----------------missing:
+adjust wowser height to screen height
+brand / identity
+spacing 
+sizing
+	could be easily solved with things like "narrow", "normal" and "wide"
+text-outline flow (2 rows, increasind line width, etc...)
+
+how specific can I make the elements to still be generic?
+
+-------------- reused:
+
+CTA
+
+<button class="btn btn-lg btn-primary">CTA BUTTON</button>
+
+
+
+
+Wowser
+rhythm: striped bg
+
+<div class="container-fluid' bg-secondary">
+	<div class="row">
+		<div class="col-12">
+		</div>
+	</div>
+</div>
+
+
+
+Top-bottom
+	top	
+		Heading
+	Bottom
+		Imagery
+
+<div class="container">	
+	<div class="row">
+		<div class="col-12 col-xl-6 offset-xl-3 text-center">
+			<h1 class="display-1">HEAD HEAD HEADING HEAD</h1>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-12">
+			<img width="100%" height="700px" src="./image.png" class="placeholder-img" />
+		</div>
+	</div>
+</div>
+
+
+
+
+
+Stripe
+
+<div class="container-fluid bg-secondary">
+	<div class="row">
+		<div class="col-12 col-xl-6 offset-xl-3">
+
+		</div>
+	</div>
+</div>
+
+
+
+
+Left-right
+
+<div class="container my-5">	
+	<div class="row py-5">
+		<div class="col-12 col-xl-6">
+
+		</div>		
+		<div class="col-12 col-xl-6">
+
+		</div>
+	</div>	
+</div>
+
+
+
+
+rhythm: slalom
+	3x
+		left-right golden ratio
+			left
+			right
+
+<div class="container">	
+	<div class="row my-5">
+		<div class="d-flex flex-column col-12 col-xl-5 justify-content-center">
+
+		</div>		
+		<div class="col-12 col-xl-7">
+
+		</div>
+	</div>	
+</div>
+
+
+
+
+-->
+
+
+
+<!--
+TODO
+
+Add more flavor:
++ animation of the divs out of focus, how they slowly apporach their correct position
+	e.g. by animating negative margins closing in to 0
++ icons blend in like solitaire cards
+	"The Apple TV app is everywhere"
++ all the carousels
++ the images that swap out
++ fade in text from bottom
+
+-->
+  
+  
+  
+<!-- 
+Nav 
+	Logo
+	menu
+	CTA
+-->
+
+<nav class="navbar navbar-expand-lg bg-white py-0 small">
+  <div class="container">
+  <div class="row w-100 mx-5">
+  <div class="col-10 offset-1">
+  <div class="d-flex justify-content-between">
+    <a class="navbar-brand py-0" href="#">
+		<svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path></svg>
+	</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 mb-2 mb-lg-0 d-flex justify-content-between align-items-center small">
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><i class="bi bi-search"></i></li>
+		<li class="nav-item"><i class="bi bi-bag"></i></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</nav>
+
+<nav class="navbar sticky-top navbar-expand-lg shadow-sm py-3"
+	style="backdrop-filter: saturate(180%) blur(20px);
+			background: rgba(255, 255, 255, 0.9);">
+  <div class="container">
+  <div class="row w-100 mx-5">
+  <div class="col-10 offset-1">
+	<h5 class="mb-0">Zoingo TV App</h5>
+  </div>
+  </div>
+  </div>
+</nav>
+
+
+
+
+
+<!--
+Wowser
+	style: central
+	icon
+	sub
+	xxl heading
+	Imagery
+	
+but it's not that easy once we introduce the scrolling effect
+-->
+<div class="position-fixed w-100" style="z-index: -1;">	
+<div class="container">	
+	<div class="row ">
+		<div class="col-12 text-center pt-5">
+			<div class="mx-auto mt-5" style="background-size:cover; width: 89px; height: 89px; background-image: url(https://apple.com/v/apple-tv-app/w/images/overview/apple_tv_icon__br5y3uwaibjm_large_2x.png);"></div>
+			<h3 class="my-3">The Apple TV App</h3>
+			<h1 class="display-1 fw-bold mb-0">All your TV.</h1>
+			<h1 class="display-1 fw-bold mb-5">All in one app.</h1>
+		</div>
+	</div>			
+</div>
+</div>
+<div class="container">	
+	<div class="row ">
+		<div class="col-12 text-center pt-5" style="height: 55vh;">
+		</div>
+	</div>			
+</div>
+<div class="container" style="height: 80vh;">		
+	<div class="row">
+		<div class="col-12 text-center pt-5 position-relative">
+			<img width="110%" src="https://apple.com/v/apple-tv-app/w/images/overview/tv_hardware__dm3jwv6rxg8y_large_2x.png" />
+			<video muted="" playsinline="" 
+				id="myVideo"
+				class="mediaobject-ios-inline-video mediaobject-element" tabindex="-1" src="https://apple.com/105/media/us/apple-tv-app/2022/22931fc9-0bdd-45ae-9148-daddf1d0bac0/anim/hero/large_2x.mp4" 
+				style="visibility: visible;
+					width: 96%; height: auto;
+					position: absolute; left: 28px; top: 57px;"></video>
+		</div>
+	</div>		
+</div>
+
+
+
+
+
+<!--
+Breather
+	sub text
+-->
+<div class="container-fluid mt-5 py-5 bg-white">
+	<div class="row my-5 py-5">
+		<div class="col-10 offset-1 col-xl-8 offset-xl-2 text-center my-5 py-5">
+			<h2 class="d-none d-xl-block">Apple Original series and films from Apple TV+. Exclusive live sports. Premium channels, streaming services, and cable TV providers.1 Thousands of movies to buy or rent. It’s all on the expertly curated Apple TV app, and it’s everywhere — on your favorite Apple devices, streaming platforms, smart TVs, gaming consoles, and more. It’s the ultimate way to watch TV.</h2>
+			<h3 class="d-xl-none">Apple Original series and films from Apple TV+. Exclusive live sports. Premium channels, streaming services, and cable TV providers.1 Thousands of movies to buy or rent. It’s all on the expertly curated Apple TV app, and it’s everywhere — on your favorite Apple devices, streaming platforms, smart TVs, gaming consoles, and more. It’s the ultimate way to watch TV.</h3>
+			<br><br>
+			<a href="#" class="btn btn-lg btn-dark rounded-5 px-4">Open the app</a>
+		</div>
+	</div>
+</div>
+
+
+
+<!--
+The slidy
+
+Fat ass header
+(fixed image)
+
+-->
+<div class="container-fluid mb-5 py-5 bg-body-secondary">
+	<div class="row mt-5 pt-5">
+		<div class="col-12 col-xl-9 offset-1 mt-5">
+			<h1 class="display-1 fw-bold" style="font-size: 7rem; line-height: 1;">
+				Shows, movies, sports, top channels. It’s on.
+			</h1>
+		</div>
+	</div>
+	<div class="row">		
+		<div class="col-12">
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</div>	
+</div>
+<!--
+The slidy pt2
+
+fixed image
+
+-->
+<div class="pe-none" style="height: 90vh;">
+<div style="height: 560vh;">
+<div class="container-fluid position-sticky" style="top: 10vh; margin-top: -70vh;">
+	<div class="row">
+		<div class="col-12 col-xl-10 offset-xl-5 text-right" style="height: 80vh;">
+			
+			<img id="" class="bg-black position-absolute" height="100%" width="100%"/> <!-- cause otherwise it looks... well, not like on apple cause they fade to black -->
+			<img id="showsMoviesChannelsImagery03" class="position-absolute opacity-0" height="100%" src="https://www.apple.com/v/apple-tv-app/w/images/overview/tv_screen_8__x1fowc1a96q6_large_2x.jpg" />
+			<img id="showsMoviesChannelsImagery02" class="position-absolute opacity-0" height="100%" src="https://www.apple.com/v/apple-tv-app/w/images/overview/tv_screen_11__d9c7n9fns8a6_large_2x.jpg" />
+			<img id="showsMoviesChannelsImagery01" class="position-absolute" height="100%" src="https://apple.com/v/apple-tv-app/w/images/overview/tv_screen_4__egly0auw7yeu_large_2x.jpg" />
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<!--
+The slidy pt3
+
+5 infomercials
+	Icon, Lead, Link, link
+	Lead, Link, link
+	Lead, Icon grid
+	Lead
+	Lead Icon grid
+	Lead Icon grid
+
+-->
+<div class="container-fluid bg-white py-5" style="margin-top: -40vh;">
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<img width="150px" src="https://apple.com/v/apple-tv-app/w/images/overview/apple_tv_plus_icon__bjeipz6zw8dy_large_2x.png" />
+			<br><br>
+			<p class="lead lead-xl text-secondary mb-2">Apple TV+ streams critically acclaimed Apple Original series and films, only on the Apple TV app.</p>
+			<a class="lead lead-xl text-decoration-none" href="#">Learn more ></a><br>
+			<a class="lead lead-xl text-decoration-none" href="#">Stream Now <i class="bi bi-play-circle"></i></a>
+		</div>
+	</div>
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<p class="lead lead-xl text-secondary ">
+				<span class="text-black">It’s never been easier to be a fan.</span> Tune in to more in-depth coverage of your favorite teams. Browse by sport or league, and get live scores and notifications for close games.
+<br><br>
+And now you can watch every Major League Soccer match — including the playoffs and bonus content — with MLS Season Pass on the Apple TV app.*</p>
+			<a class="lead lead-xl text-decoration-none"  href="#">Learn more about MLS Season Pass</a><br>
+		</div>
+	</div>
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<p class="lead lead-xl  text-secondary">
+				<span class="text-black">Take control of your channels.</span>
+				Now you can quickly and easily subscribe to just the channels you watch — like Paramount+, Showtime, Starz, and AMC+. There are no new apps, accounts, or passwords needed for up to six family members, and you can even watch offline.</p>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<br><br>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<br><br>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+		</div>
+	</div>
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<p class="lead lead-xl  text-secondary">
+				<span class="text-black">Buy. Rent. Watch. All inside the app.</span>
+				Welcome to the new home of thousands of movies, including all the latest blockbusters. Now you can buy, rent, and watch right inside the app — as well as watch everything you’ve previously purchased from iTunes.</p>
+		</div>
+	</div>
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<p class="lead lead-xl  text-secondary">
+				<span class="text-black">Streaming services, streamlined.</span>
+				Easily discover all your favorite shows from streaming services including Disney+, HBO Max, Prime Video, Hulu, and more — all inside the app.</p>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<br><br>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<br><br>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+		</div>
+	</div>	
+	<div class="row mb-5 py-5">
+		<div class="col-12 col-xl-3 offset-xl-1 text-right">
+			<br><br><br><br><br><br><br><br>
+			<p class="lead-xl text-secondary ">
+				<span class="text-black">Watch cable TV outside</span>
+				the box. Enjoy all the top-rated prime-time TV shows, live sports, and news — from leading cable providers — on demand right in the Apple TV app.</p>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<img src="" class="placeholder-img" width="120px" height="60px"/>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</div>	
+</div>
+
+
+
+<!--
+Wowser
+	xxl heading
+	90% format fill image
+-->
+<div class="container-fluid mb-5 py-5 bg-body-secondary" style="height: 100vh">
+	<div class="row mt-5 pt-5">
+		<div class="col-12 col-xl-10 offset-1 my-5">
+			<h1 class="display-1 fw-bold" style="font-size: 7rem; line-height: 1;">
+				Easily find what<br>
+you want to watch.
+			</h1>
+		</div>
+	</div>
+	<div class="row">		
+		<div class="col-10 offset-1">
+			<img class="" width="100%" src="https://apple.com/v/apple-tv-app/w/images/overview/tv_screen_4__egly0auw7yeu_large_2x.jpg" />
+		</div>
+	</div>	
+</div>
+
+
+
+
+<!---
+fillin de void maan
+-->
+<div class="container-fluid bg-white py-5">
+	<div class="row my-5 pt-5">
+		<div class="col-12 col-xl-4 offset-xl-1 text-right">
+			<br><br><br><br><br><br>	
+		</div>
+	</div>
+</div>
+
+
+
+<!--
+Triple Trouble
+	Heading
+	Triplet
+		Card
+			Imagery
+				full-format
+-->
+<div class="container-fluid bg-body-secondary py-5">
+<div class="container">
+	<div class="row mt-5 pt-5">
+		<div class="col-12 d-flex justify-content-between align-items-center">
+			<h1 class="fw-bold">For All of You</h1>
+			<div class="bg-secondary-subtle rounded-5 p-3 d-flex" style="">
+				<div class="pattern-bg rounded-5 me-3" style="width: 2.5rem; aspect-ratio: 1/1;"> </div>
+				<div class="pattern-bg rounded-5 me-3" style="width: 2.5rem; aspect-ratio: 1/1;"> </div>
+				<div class="pattern-bg rounded-5 me-3" style="width: 2.5rem; aspect-ratio: 1/1;"> </div>
+				<div class="pattern-bg rounded-5" style="width: 2.5rem; aspect-ratio: 1/1;"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="col pattern-bg m-3 rounded-3 shadow-lg" style="height: 250px;">
+		</div>
+		<div class="col pattern-bg m-3 rounded-3 shadow-lg" style="height: 250px;">
+		</div>
+		<div class="col pattern-bg m-3 rounded-3 shadow-lg" style="height: 250px;">
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!---
+Stripe
+	Lead
+-->
+<div class="container-fluid bg-white pb-5">
+	<div class="row py-5">
+		<div class="col"></div>
+		<div class="col-12 col-xl-5 p-3">
+			<p class="lead lead-xl  text-secondary">
+			<span class="text-black">Personalization. Like you’ve never seen it.</span>
+			Discover more of what you love — including movie and show suggestions picked just for you, dedicated selections based on everything you like to watch from all the different apps you use, and recommendations for something everyone in the house can enjoy together.</p>	
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
+
+
+<!--
+Stripe: Carousel
+	Heading
+	Triplet
+		Card
+			Imagery
+				full-format
+-->
+<div class="container-fluid bg-body-secondary py-5">
+<div class="container">
+	<div class="row mt-5 pt-5">
+		<div class="col-12">
+			<h1 class="fw-semibold">What We're Watching</h1>
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="col pattern-bg m-3 rounded-3 shadow-lg" style="height: 250px;">
+		</div>
+		<div class="col m-3 rounded-3" style="height: 250px;">
+			<br>
+			<h5 class="text-secondary">SCI-FI</h5>
+			<h2 class="">Nope</h2>
+			<p class="lead fw-bold text-secondary me-5">This eerie sci-fi spectacle is an electrifying homage to creature feature classics.</p>
+		</div>
+		<div class="col pattern-bg m-3 rounded-3 shadow-lg" style="height: 250px;">
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+<!--
+Light Wowser
+	Lead
+	Imagery
+	Lead
+-->
+<div class="container-fluid bg-white py-5">
+<div class="container">
+	<div class="row pb-5">
+		<div class="col-12 col-xl-6 offset-xl-3">
+			<p class="lead lead-xl text-secondary">
+				<span class="text-black">Choose from the editors’ choices.</span>
+				Watch Now gives you the freedom to explore curated recommendations, handpicked by our editors, that guide you to the best of what’s on — across all your apps.</p>
+		</div>
+	</div>
+	<div class="row my-5">
+		<div class="col-12 col-xl-8 offset-xl-2 pattern-bg	 rounded-3" style="height: 65vh;">
+		</div>
+	</div>
+	<div class="row pb-5 my-5">
+		<div class="col-12 col-xl-6 offset-xl-3 my-5">
+			<p class="lead lead-xl text-secondary">
+				<span class="text-black">A dedicated Kids section. For kids of all ages.</span>
+				You can easily find great shows selected just for children — categorized by character, topic, and even age — unless your kids find them first.
+		</div>
+	</div>	
+</div>
+</div>
+
+
+
+<!--
+Wowser
+	xxl heading
+	90% format fill image
+-->
+<div class="container-fluid mb-5 py-5 bg-body-secondary" style="height: 100vh">
+	<div class="row mt-5 pt-5">
+		<div class="col-12 col-xl-10 offset-1 my-5">
+			<h1 class="display-1 fw-bold" style="font-size: 7rem; line-height: 1;">
+				Now every screen<br>
+is a TV screen.
+			</h1>
+		</div>
+	</div>
+	<div class="row">		
+		<div class="col-10 offset-1">
+			<img class="" width="100%" src="https://apple.com/v/apple-tv-app/w/images/overview/tv_screen_4__egly0auw7yeu_large_2x.jpg" />
+		</div>
+	</div>	
+</div>
+
+
+
+
+<!---
+TODO: fill in
+-->
+<div class="container-fluid bg-white pt-5">
+	<div class="row mt-5 pt-5">
+		<div class="col-12 col-xl-8 offset-xl-2  mt-5 pt-5 text-center">
+			<br><br><br><br>	
+			<h1>The Apple TV app is everywhere.</h1>
+			<br>
+			<p class="lead lead-xl text-secondary">
+			The Apple TV app is already on your favorite Apple devices, as well as<br>
+			streaming platforms, popular smart TVs, gaming consoles, and<br>
+			AirPlay-enabled devices. Just open the app to start watching.</p>
+		
+			<br><br>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col text-center"></div>
+		<div class="col text-center lead"><i class="bi bi-laptop display-1"></i><br>laptop</div>
+		<div class="col text-center lead"><i class="bi bi-laptop display-1"></i><br>macBook</div>
+		<div class="col text-center lead"><i class="bi bi-laptop display-1"></i><br>Dell XPS</div>
+		<div class="col text-center lead"><i class="bi bi-laptop display-1"></i><br>Razor</div>
+		<div class="col text-center lead"><i class="bi bi-laptop display-1"></i><br>Ubuntu</div>
+		<div class="col text-center"></div>
+	</div>
+	<div class="row my-5">
+		<div class="col-12 col-xl-8 offset-xl-2 text-center mb-5">
+			<br>
+			<h1>See it on your big screen.</h1>
+			<a href="#" class="text-decoration-none">Explore Compatible Devices</a>
+			<br><br><br>
+			<div class="d-flex justify-content-between align-items-center">
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+			</div>
+			<div class="d-flex justify-content-between align-items-center">
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+				<img src="https://apple.com/v/apple-tv-app/w/images/overview/icon_samsung__cni8cl603w9y_large_2x.jpg" style="width: 117px; height: 81px;"/>
+			</div>
+		</div>	
+	</div>
+	<div class="row mt-5 p-5">
+		<div class="col-12 bg-black text-center mt-5 p-5" style="height: 65vh;">
+			<br>
+			<img width="100px" style="filter: invert(1);" src="https://apple.com/v/apple-tv-app/w/images/overview/apple_tv_plus_icon__bjeipz6zw8dy_large_2x.png" />
+			<br><br>
+			<h2 class="text-white mb-3">Get 3 months of Apple TV+ free<br>
+when you buy an Apple TV 4K.2</h2>
+			<a href="#" class="text-decoration-none lead lead-xl me-4">Try it free</a>
+			<a href="#" class="text-decoration-none lead lead-xl">Learn more ></a>
+			<br><br><br>
+			
+		</div>	
+	</div>
+</div>
+
+
+
+<!--
+left-right
+	style: half-half
+		each
+			small thing
+			Heading
+			button(s)
+			Imagery
+-->
+<div class="container-fluid bg-white pb-5">	
+	<div class="row px-5 pb-5">
+		<div class="col-12 col-xl-6 pe-4 ps-0 bg-body-tertiary text-center d-flex flex-column justify-content-between align-items-center" style="background-clip: content-box;">
+			<div>
+				<br><br><br>
+				<img class="mb-3" height="33px" src="https://apple.com/v/apple-tv-app/w/images/overview/apple_tv_4k_logo__dz99tqv3uliu_large_2x.png" />
+				<h1 class="fw-bold display-5">The Apple experience.<br>
+	Cinematic in every sense.</h1>
+				<br>
+				<div class="d-flex align-items-center justify-content-center text-center">
+					<button class="btn btn-primary rounded-5 me-5 lead px-3">Buy</button>
+					<a class="lead text-decoration-none" href="#">Learn more ></a><br>
+				</div>
+				<br><br>
+			</div>
+			<img width="83%" src="https://apple.com/v/apple-tv-app/w/images/overview/apple_tv_4k_remote__es0p632bdk02_large_2x.jpg" />
+		</div>		
+		<div class="col-12 col-xl-6 ps-4 pe-0 bg-body-tertiary text-center" style="background-clip: content-box;">
+			<br><br><br>
+			<h2>AirPlay</h2>
+			<h1 class="fw-bold display-5">And just like that,<br>
+it’s on TV.</h1>
+			<br>
+			<a class="lead text-decoration-none my-2" href="#">Learn more ></a><br>
+			<br>
+			<img width="100%" src="https://apple.com/v/apple-tv-app/w/images/overview/air_play__tjqhrnet7ciq_large_2x.jpg" />
+		</div>
+	</div>	
+</div>
+
+
+
+
+
+
+
+<!--
+footer
+	x-column sitemap (5)
+		tiny heading
+		[3-4 links]
+-->
+<div class="container py-5 mb-5">
+	<div class="row  mx-5">
+	<div class="col-10 offset-1">
+	<div class="row">
+		<div class="col">
+			<h6>tiny heading</h6>
+			<span>link</span><br>
+			<span>link</span><br>
+			<span>link</span><br>
+		</div>
+		<div class="col">
+			<h6>tiny heading</h6>
+			<span>link</span><br>
+			<span>link</span><br>
+			<span>link</span><br>
+		</div>
+		<div class="col">
+			<h6>tiny heading</h6>
+			<span>link</span><br>
+			<span>link</span><br>
+			<span>link</span><br>
+		</div>
+		<div class="col">
+			<h6>tiny heading</h6>
+			<span>link</span><br>
+			<span>link</span><br>
+			<span>link</span><br>
+		</div>
+		<div class="col">
+			<h6>tiny heading</h6>
+			<span>link</span><br>
+			<span>link</span><br>
+			<span>link</span><br>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+ 
+  </body>
+  
+  
+  <script>
+  
+	let previousScroll = 0;
+	let scrollDirection = "down";
+	let animation = {};
+	let videoStarted = false;
+	var vid = document.getElementById("myVideo");
+	
+	// Patrick's animation engine
+	// ideas / TODOs
+	//		use element attributes to generate this array, so as to define animations in HTML directly (easier programming flow)
+	
+	let scrollAnimations = [
+		{
+			'element': document.getElementById('showsMoviesChannelsImagery01'),
+			'className': 'opacity-0',
+			'type': "addClass",
+			'tempo': "immediately",
+			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
+		},
+		{
+			'element': document.getElementById('showsMoviesChannelsImagery02'),
+			'className': 'opacity-0',
+			'type': "removeClass",
+			'tempo': "immediately",
+			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
+		},
+	];
+  
+	window.addEventListener("scroll", (event) => {
+		// determine whether we're scrolling up or down
+		let scroll = this.scrollY;
+		console.log(scroll);
+		
+		if(previousScroll <= scroll) {scrollDirection = "down"}
+		else {scrollDirection = "up"}
+		
+		previousScroll = scroll;
+		
+		
+		
+		if(!videoStarted && scroll > 300){
+			//play video on top
+			vid.play();
+			videoStarted = true;
+		}
+		
+		for(let i = 0; i < scrollAnimations.length; i++){
+			animation = scrollAnimations[i];
+		
+			// skip the ones that are irrelevant now
+			if (animation.scrollPosition < scroll - 1000) {continue;} // skip the first few animations that are out of reach
+			if (scroll < animation.scrollPositionEnd) {
+				animation.hasEnded = false;
+			}
+			if (animation.hasEnded) {continue;}
+			if (animation.scrollPosition > scroll + 1000) { // no need to even look at animations that are far out of reach
+				break; // assuming that animations are ordered and no 2 animations are playing at the same time, we can skip all the others that are out of reach
+			} 
+			
+			
+			// actual animation stuff
+			if (scrollDirection == "down"){
+				if (animation.tempo == "immediately") { // and that is why we use enums, to avoid typos
+					if (scroll >= animation.scrollPosition) { // animate
+						if(animation.type == "addClass") {animation.element.classList.add(animation.className);}
+						if(animation.type == "removeClass") {animation.element.classList.remove(animation.className);}
+						
+					}				
+				}			
+			} else { //scrollDirection up
+				if (animation.tempo == "immediately") {
+					if (scroll <= animation.scrollPosition) { // animate
+						if(animation.type == "addClass") {animation.element.classList.remove(animation.className);}
+						if(animation.type == "removeClass") {animation.element.classList.add(animation.className);}
+					}				
+				}					
+			}
+
+	
+		};
+	});  
+	
+	// animate attribute based on position
+	function animateOnScroll(id, attribute, valueBefore, valueAfter, scrollPositionStart, scrollPositionEnd) {
+		scrollAnimations.add({
+			'id': id,
+			'attribute': attribute,
+			'valueBefore': valueBefore,
+			'valueAfter': valueAfter,
+			'scrollPositionStart': scrollPositionStart,
+			'scrollPositionEnd': scrollPositionEnd
+		});
+	}
+	
+  </script>
+  
+  
+  
+  
+</html>
