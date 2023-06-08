@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Granny Smith: Apple built on Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+	<link rel="icon" type="image/x-icon" href="logo.png">
+  
+  	<style>
+		.placeholder-img, .pattern-bg {
+			background-color: #e5e5f7;
+			background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+		}
+		
+		.h-100vh {
+			height: 100vh;
+		}		
+		.h-175vh {
+			height: 175vh;
+		}
+		.ml-n20 {
+			margin-left: -20%;
+		}
+		.mt-n100 { margin-top: -100px; }
+		.mt-n200 { margin-top: -200px; }
+		.mt-n300 { margin-top: -300px; }
+
+		.bg-content {
+			background-clip: content-box;
+		}
+		
+		.lead {
+			line-height: 1.25;
+			font-weight: 600;
+		}			
+		.lead-xl {
+			line-height: 1.25;
+			font-weight: 600;
+			color: #999!important;
+		}	
+		a.lead {
+			color: #0070c9!important;
+		}
+
+		.xxl-heading {
+			 line-height: 1.1;
+			 font-weight: bold;
+		}
+		
+		#breatherUnderVideo {
+			margin-top: -100px;
+		}
+		
+		.group-primary h2, .group-primary h4 {
+			color: rgba(var(--bs-primary-rgb));
+		}		
+		.group-warning h2, .group-warning h4 {
+			color: rgba(var(--bs-warning-rgb));
+		}
+		
+		@media only screen and (max-width: 768px) {
+			.xxl-heading {
+				 font-size: 2.5rem;
+			}
+			
+			.xtrawide-sm {
+				width: 110%!important;
+			}
+			
+			.card {
+				width: 258px;
+				height: 145px;
+			}
+			
+			h2 {
+				font-size: 1.75rem;
+				font-weight: bold;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			h2 {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		
+			.lead-xl {
+				font-size: 1.3rem;
+			}		
+			.lead-xxl {
+				font-size: 1.4rem;
+			}
+			
+			.xxl-heading {
+				font-size: 5.8rem;
+			}
+			
+			#slideshowy-length-container {
+				height: 2400px;
+			}	
+			#slideshowy-container {
+				top: 50px;			
+			}
+
+			.card {
+				width: 298px;
+				height: 168px;
+			}
+			
+		}
+		@media only screen and (max-width: 992px) {
+			a.lead {
+				font-size: initial;
+				font-weight: initial;
+			}		
+		}
+		@media only screen and (min-width: 992px) {
+			.xxl-heading {
+				line-height: 1;
+				font-size: 6.8rem;
+			}
+			#slideshowy-container {
+				top: 10vh;			
+			}			
+			#slideshowy-length-container {
+				height: 4540px;
+			}
+			.lead-xl {
+				font-weight: semibold;
+				font-size: 1.5rem;
+			}					
+			.lead-xxl {
+				font-size: 2rem;
+			}		
+			
+			.card {
+				width: 398px;
+				height: 224px;
+			}
+			.mt-lg-n400 { margin-top: -400px; }
+			.mt-lg-n500 { margin-top: -500px; }
+		}	
+		@media only screen and (min-width: 1200px) {
+			.xxl-heading {
+				font-size: 7rem;
+			}
+			#slideshowy-length-container {
+				height: 5000px;
+			}
+					
+			#breatherUnderVideo {
+				margin-top: -200px;
+			}
+			
+			#slideshowy-offset {
+				margin-top: -750px;
+				height: 450px;
+			}
+			h2 {
+				font-size: 3rem;
+				font-weight: bold;
+			}			
+		}		
+
+		
+		
+		.display-1 {
+			font-size: 6.4rem;
+			line-height: 1;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			letter-spacing: -0.03em;
+		}
+		
+		
+		.bg-body-secondary {
+			background-color: #f1f1f4!important;
+		}
+		.bg-body-tertiary {
+			background-color: #f5f5f7!important;
+		}
+		
+		img	 {
+			transition: opacity .3s ease-in-out;		
+		}
+	</style>
+  
+  </head>
+  <body class="bg-body-tertiary overflow-x-hidden">
+  
+  
+  
+
+<!--
+TODO
+
+
+-->
+  
+  
+  
+<!-- 
+Nav 
+	Logo
+	menu
+	CTA
+-->
+<nav class="navbar navbar-expand-lg py-0 small"
+	style="background-color: rgba(245,245,247,.72);">
+  <div class="container-fluid">
+  <div class="container px-1 px-lg-auto">
+  <div class="row w-100 mx-0">
+  <div class="col-12 col-xl-10 offset-xl-1 px-xl-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <a class="navbar-brand py-0" href="#">
+		<svg height="45" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path></svg>
+	</a>
+	<div>
+		<button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon h6 mb-0"></span>
+		</button>
+	</div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 mb-2 mb-lg-0 d-flex justify-content-between align-items-center small">
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><i class="bi bi-search"></i></li>
+		<li class="nav-item"><i class="bi bi-bag"></i></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</nav>
+
+<nav class="navbar sticky-top navbar-expand-lg py-lg-3"
+	style="backdrop-filter: saturate(180%) blur(20px);
+			background-color: rgba(245,245,247,.72);">
+  <div class="container px-1 px-xl-auto">
+  <div class="row w-100 mx-0">
+  <div class="col-12 col-xl-10 offset-xl-1 px-xl-5 d-flex justify-content-between align-items-center">
+	<h5 class="mb-0 d-none d-lg-block">macOS Sonoma Preview</h5>
+	<h5 class="mb-0 d-lg-none">macOS Sonoma Preview</h5>
+	<!--<h6 href="#" class="btn btn-primary rounded-5 pt-0 pb-1 mb-0">Open the app</h6>-->
+  </div>
+  </div>
+  </div>
+  </div>
+</nav>
+
+
+
+
+
+<!--
+Wowser
+	style: central
+	icon
+	sub
+	xxl heading
+	Imagery
+	
+but it's not that easy once we introduce the scrolling effect
+-->
+
+<div class="container" style="">		
+	<div class="row pt-5">
+		<div class="col-10 offset-1 col-md-12 offset-md-0 text-center position-relative">
+			<img class="d-md-none" width="100%" src="https://www.apple.com/v/apple-tv-app/w/images/overview/hero__lgyucsgf7t2m_small_2x.png" />
+			<div class="d-none d-md-block">
+				<img width="50%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/hero/imac__ck9whsk49umq_medium.png" />
+			</div>
+		</div>
+	</div>		
+</div>
+<div class="container">	
+	<div class="row mb-5">
+		<div class="col-12 text-center pt-5">			
+			<h3 class="d-none d-lg-block my-3">macOS Sonoma Preview</h3>
+			<h4 class="d-lg-none my-3">macOS Sonoma Preview</h4>
+			<h1 class="xxl-heading">Come for the power.<br>Stay for the fun.</h1>
+		</div>
+	</div>			
+</div>
+
+
+
+
+
+<!--
+Breather
+	sub text
+-->
+<div id="breatherUnderVideo" class="container-fluid py-lg-5">
+	<div class="row mt-lg-5 py-5">
+		<div class="col-12 col-xl-8 offset-xl-2 text-center my-5 py-5 px-5">
+			<p class="lead lead-xxl">With macOS Sonoma, work and play on your Mac are even more powerful. Elevate your presence on video calls. Access information in all-new ways. Boost gaming performance. And discover even more ways to personalize your Mac.</p>
+			<br><br>
+			<a href="#" class="btn btn-lg btn-dark rounded-5 px-4">Open the app</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!----------------------------------------
+GROUP "Screen Savers"
+1 fullsize Card
+1 50-50 split cards 
+
+TODO: any group has one color for its headings. Create a class for a group container OR change variable
+-->
+<div class="group-primary my-5">
+
+	<!--
+	Colorful Heading
+	-->
+	<div class="container">
+		<div class="row">
+		<div class="col px-5 py-3">
+		<h2 class="fw-semibold display-4">Screen Savers</h2>
+		</div>
+		</div>
+	</div>
+
+	<!--
+	Fullsize Card
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container bg-white rounded-5">
+		<div class="row">
+		<div class="col-7 p-5">
+			<h4 class="mb-1" style="margin-top: -7px;">Stunning new screen savers</h4>
+			<p class="lead">New slow-motion screen savers of breathtaking locations from around the world look beautiful on your large Mac display. When you log in, they seamlessly become your desktop wallpaper.</p>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col text-center">
+			<video height="100%" width="75%"
+				muted="" playsinline="" loop="true" autoplay="true"
+					src="https://apple.com/105/media/us/macos/sonoma-preview/2023/e6d837c5-8a7e-49d8-b0bd-137b21320db3/anim/screen-saver/medium.mp4">
+					</video>
+		</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<!----------------------------------------
+GROUP "Widgets on Desktop"
+1 fullsize Card
+1 50-50 split cards 
+
+TODO: any group has one color for its headings. Create a class for a group container OR change variable
+-->
+<div class="group-warning my-5">
+
+	<!--
+	Colorful Heading
+	-->
+	<div class="container">
+		<div class="row">
+		<div class="col px-5 py-3">
+		<h2 class="fw-semibold display-4">Widgets on Desktop</h2>
+		</div>
+		</div>
+	</div>
+
+	<!--
+	Fullsize Card
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container bg-white rounded-5">
+		<div class="row">
+		<div class="col-7 p-5">
+			<h4 class="mb-1" style="margin-top: -7px;">Add widgets to your desktop</h4>
+			<p class="lead">Place widgets on your desktop from the new widget gallery. And you can now play a podcast, turn off the lights, and more — right from a widget.</p>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col text-center">
+			<img height="100%" width="75%"
+					src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/desktop-widgets/widgets__d1m1t8jqi7iq_medium.jpg" />
+		</div>
+		</div>
+	</div>
+	
+	<!--
+	Two half Cards
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container rounded-5 my-3">
+		<div class="row gx-5">
+			<div class="col-6 px-2" >
+				<div class="rounded-5 bg-white pb-5" >
+				<div class="px-5 pt-5" >
+					<h4 class="mb-1" style="margin-top: -7px;">Access iPhone widgets on Mac</h4>
+					<p class="lead">With Continuity, you can add your iPhone widgets to your desktop without having to install the corresponding apps on your Mac.</p>
+					<br>				
+				
+				</div>
+				<img class="" width="90%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/desktop-widgets/at_a_glance__d1ta9k5dzpm6_large.jpg" />
+				</div>
+			</div>
+			<div class="col-6 px-2 " >
+				<div class="rounded-5 bg-white ps-5" >
+				<div class="pe-5 pt-5" >
+					<h4 class="mb-1" style="margin-top: -7px;">Widgets fade for better focus</h4>
+					<p class="lead">When you open an app or window or use Stage Manager, widgets fade into the background so you can concentrate on the task at hand. Switch your wallpaper and the colors of the widgets instantly adapt.</p>
+					<br>				
+				
+				</div>
+				<img class="" width="100%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/desktop-widgets/fading_screen_endframe__e05t4cb4zkeq_large.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+footer
+	x-column sitemap (5)
+		tiny heading
+		[3-4 links]
+-->
+<div class="container py-5 mb-5 bg-body-secondary">
+	<div class="row  mx-lg-5">
+		<div class="col-12 col-lg-10 offset-lg-1">
+		
+			<div class="accordion accordion-flush d-lg-none" id="accordionFlushExample">
+			  <div class="accordion-item bg-transparent">
+				<h2 class="accordion-header">
+				  <button class="accordion-button collapsed bg-transparent px-0 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+					Accordion Item #1
+				  </button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+				  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+				</div>
+			  </div>
+			  <div class="accordion-item bg-transparent">
+				<h2 class="accordion-header">
+				  <button class="accordion-button collapsed bg-transparent px-0 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+					Accordion Item #2
+				  </button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+				  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+				</div>
+			  </div>
+			  <div class="accordion-item bg-transparent">
+				<h2 class="accordion-header">
+				  <button class="accordion-button collapsed bg-transparent px-0 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+					Accordion Item #3
+				  </button>
+				</h2>
+				<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+				  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+				</div>
+			  </div>
+			</div>		
+			
+			<div class="d-none d-lg-flex row">
+				<div class="col">
+					<h6>tiny heading</h6>
+					<span>link</span><br>
+					<span>link</span><br>
+					<span>link</span><br>
+				</div>
+				<div class="col">
+					<h6>tiny heading</h6>
+					<span>link</span><br>
+					<span>link</span><br>
+					<span>link</span><br>
+				</div>
+				<div class="col">
+					<h6>tiny heading</h6>
+					<span>link</span><br>
+					<span>link</span><br>
+					<span>link</span><br>
+				</div>
+				<div class="col">
+					<h6>tiny heading</h6>
+					<span>link</span><br>
+					<span>link</span><br>
+					<span>link</span><br>
+				</div>
+				<div class="col">
+					<h6>tiny heading</h6>
+					<span>link</span><br>
+					<span>link</span><br>
+					<span>link</span><br>
+				</div>
+			</div>
+			</div>
+	</div>
+</div>
+
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+ 
+  </body>
+  
+  
+  <script>
+  
+	let previousScroll = 0;
+	let scrollDirection = "down";
+	let animation = {};
+	let videoStarted = false;
+	var vid = document.getElementById("myVideo");
+	
+	// Patrick's animation engine
+	// ideas / TODOs
+	//		use element attributes to generate this array, so as to define animations in HTML directly (easier programming flow)
+	
+	let scrollAnimations = [
+		{
+			'element': document.getElementById('showsMoviesChannelsImagery01'),
+			'className': 'opacity-0',
+			'type': "addClass",
+			'tempo': "immediately",
+			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
+		},
+		{
+			'element': document.getElementById('showsMoviesChannelsImagery02'),
+			'className': 'opacity-0',
+			'type': "removeClass",
+			'tempo': "immediately",
+			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
+		},
+	];
+  
+	window.addEventListener("scroll", (event) => {
+		// determine whether we're scrolling up or down
+		let scroll = this.scrollY;
+		// console.log(scroll);
+		
+		if(previousScroll <= scroll) {scrollDirection = "down"}
+		else {scrollDirection = "up"}
+		
+		previousScroll = scroll;
+		
+		
+		
+		if(!videoStarted && scroll > 300){
+			//play video on top
+			vid.play();
+			videoStarted = true;
+		}
+		
+		for(let i = 0; i < scrollAnimations.length; i++){
+			animation = scrollAnimations[i];
+		
+			// skip the ones that are irrelevant now
+			if (animation.scrollPosition < scroll - 1000) {continue;} // skip the first few animations that are out of reach
+			if (scroll < animation.scrollPositionEnd) {
+				animation.hasEnded = false;
+			}
+			if (animation.hasEnded) {continue;}
+			if (animation.scrollPosition > scroll + 1000) { // no need to even look at animations that are far out of reach
+				break; // assuming that animations are ordered and no 2 animations are playing at the same time, we can skip all the others that are out of reach
+			} 
+			
+			
+			// actual animation stuff
+			if (scrollDirection == "down"){
+				if (animation.tempo == "immediately") { // and that is why we use enums, to avoid typos
+					if (scroll >= animation.scrollPosition) { // animate
+						if(animation.type == "addClass") {animation.element.classList.add(animation.className);}
+						if(animation.type == "removeClass") {animation.element.classList.remove(animation.className);}
+						
+					}				
+				}			
+			} else { //scrollDirection up
+				if (animation.tempo == "immediately") {
+					if (scroll <= animation.scrollPosition) { // animate
+						if(animation.type == "addClass") {animation.element.classList.remove(animation.className);}
+						if(animation.type == "removeClass") {animation.element.classList.add(animation.className);}
+					}				
+				}					
+			}
+
+	
+		};
+	});  
+	
+	// animate attribute based on position
+	function animateOnScroll(id, attribute, valueBefore, valueAfter, scrollPositionStart, scrollPositionEnd) {
+		scrollAnimations.add({
+			'id': id,
+			'attribute': attribute,
+			'valueBefore': valueBefore,
+			'valueAfter': valueAfter,
+			'scrollPositionStart': scrollPositionStart,
+			'scrollPositionEnd': scrollPositionEnd
+		});
+	}
+	
+  </script>
+  
+  
+  
+  
+</html>
