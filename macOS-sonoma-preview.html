@@ -59,6 +59,9 @@
 		}		
 		.group-warning h2, .group-warning h4 {
 			color: rgba(var(--bs-warning-rgb));
+		}	
+		.group-success h2, .group-success h4 {
+			color: rgba(var(--bs-success-rgb));
 		}
 		
 		@media only screen and (max-width: 768px) {
@@ -318,11 +321,8 @@ Breather
 
 
 <!----------------------------------------
-GROUP "Screen Savers"
+GROUP "Screen Savers" blue
 1 fullsize Card
-1 50-50 split cards 
-
-TODO: any group has one color for its headings. Create a class for a group container OR change variable
 -->
 <div class="group-primary my-5">
 
@@ -369,11 +369,9 @@ TODO: any group has one color for its headings. Create a class for a group conta
 
 
 <!----------------------------------------
-GROUP "Widgets on Desktop"
+GROUP "Widgets on Desktop" orange
 1 fullsize Card
 1 50-50 split cards 
-
-TODO: any group has one color for its headings. Create a class for a group container OR change variable
 -->
 <div class="group-warning my-5">
 
@@ -423,7 +421,7 @@ TODO: any group has one color for its headings. Create a class for a group conta
 	<div class="container rounded-5 my-3">
 		<div class="row gx-5">
 			<div class="col-6 px-2" >
-				<div class="rounded-5 bg-white pb-5" >
+				<div class="rounded-5 bg-white pb-5 h-100" >
 				<div class="px-5 pt-5" >
 					<h4 class="mb-1" style="margin-top: -7px;">Access iPhone widgets on Mac</h4>
 					<p class="lead">With Continuity, you can add your iPhone widgets to your desktop without having to install the corresponding apps on your Mac.</p>
@@ -449,6 +447,128 @@ TODO: any group has one color for its headings. Create a class for a group conta
 
 </div>
 
+
+
+
+<!----------------------------------------
+GROUP "Video Conferencing" green
+2 50-50 split cards 
+1 fullsize Card
+-->
+<div class="group-success my-5">
+
+	<!--
+	Colorful Heading
+	-->
+	<div class="container">
+		<div class="row">
+		<div class="col px-5 py-3">
+		<h2 class="fw-semibold display-4">Video Conferencing</h2>
+		</div>
+		</div>
+	</div>
+	
+	<!--
+	Two half Cards
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container my-3">
+		<div class="row gx-5">
+			<div class="col-6 px-2" >
+				<div class="rounded-5 bg-white px-5 pb-5 text-center h-100" >
+				<div class=" pt-5 text-start" >
+					<h4 class="mb-1" style="margin-top: -7px;">Put yourself front and center</h4>
+					<p class="lead">The new Presenter Overlay keeps you part of the conversation when sharing your screen. Choose from two overlays, large and small. The large overlay keeps the spotlight on you, with your screen framed next to you on a separate layer. You can move, walk, and talk in front of your content.</p>
+					<br>				
+				
+				</div>
+				<img class="" width="80%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/video-conference/share_preview_endframe__dxyx07tik16q_large.jpg" />
+				</div>
+			</div>
+			<div class="col-6 px-2 " >
+				<div class="rounded-5 bg-white ps-5" >
+				<div class="pe-5 pt-5" >
+					<h4 class="mb-1" style="margin-top: -7px;">Float over your shared screen</h4>
+					<p class="lead">Use the small overlay to appear in a movable bubble over your shared screen, so it’s easy to be seen while showcasing your work. Move yourself around the screen and point to important details.</p>
+					<br>				
+				
+				</div>
+				<img class="" width="100%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/video-conference/presentation_screen_endframe__ewhjwv7xe56q_large.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<!--
+	Two half Cards
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container my-3">
+		<div class="row gx-5">
+			<div class="col-6 px-2" >
+				<div class="rounded-5 bg-white px-5 pb-5 text-center h-100  overflow-hidden position-relative" >
+					<video class="position-absolute"
+						style="object-fit: cover; left:0; z-index: 0;"
+						playsinline="" muted="" autoplay="" loop="" 
+						src="https://apple.com/105/media/us/ipados/ipados-17-preview/2023/71f8002e-afcc-4b6f-9f52-181b69ec36eb/anim/gesture/large.mp4"></video>							
+					<div class="position-relative pt-5 text-start" style="z-index: 99;">
+						<h4 class="mb-1 text-white" style="margin-top: -7px;">React with your hands</h4>
+						<p class="lead text-white">Add a reaction that fills the camera frame with fun 3D augmented reality effects like hearts, confetti, fireworks, and more. And you can share a reaction with just a hand gesture</p>
+						<br>				
+					</div>
+				</div>
+			</div>
+			<div class="col-6 px-2 " >
+				<div class="rounded-5 bg-white ps-5" >
+					<div class="pe-5 pt-5" >
+						<h4 class="mb-1" style="margin-top: -7px;">New Screen Sharing picker</h4>
+						<p class="lead">Easily share an app or even multiple apps when on a video call, right from the window you’re in.</p>
+						<br>				
+					
+					</div>
+				<img style="margin-left: -4.5%;" class="" width="104.5%" src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/video-conference/screen_sharing__c8oqqjhj8oeq_large.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<!--
+	Fullsize Card
+		heading
+		card container
+			small heading
+			paragraph
+			Imagery
+	-->
+	<div class="container bg-white rounded-5">
+		<div class="row">
+		<div class="col-7 p-5">
+			<h4 class="mb-1" style="margin-top: -7px;">Stay in frame</h4>
+			<p class="lead">Control the composition of your video when using Studio Display or iPhone as your camera. Adjust the frame with zoom and pan controls or use Recenter to automatically place yourself in the center of the frame.</p>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col text-center">
+			<img height="100%" width="75%"
+					src="https://www.apple.com/v/macos/sonoma-preview/a/images/overview/video-conference/frame__d7emeet8t2eu_large.jpg" />
+		</div>
+		</div>
+	</div>
+	
+	
+
+</div>
 
 
 
@@ -547,106 +667,6 @@ footer
 
  
   </body>
-  
-  
-  <script>
-  
-	let previousScroll = 0;
-	let scrollDirection = "down";
-	let animation = {};
-	let videoStarted = false;
-	var vid = document.getElementById("myVideo");
-	
-	// Patrick's animation engine
-	// ideas / TODOs
-	//		use element attributes to generate this array, so as to define animations in HTML directly (easier programming flow)
-	
-	let scrollAnimations = [
-		{
-			'element': document.getElementById('showsMoviesChannelsImagery01'),
-			'className': 'opacity-0',
-			'type': "addClass",
-			'tempo': "immediately",
-			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
-		},
-		{
-			'element': document.getElementById('showsMoviesChannelsImagery02'),
-			'className': 'opacity-0',
-			'type': "removeClass",
-			'tempo': "immediately",
-			'scrollPosition': 3300, // always the smaller value, closer to the top. the start
-		},
-	];
-  
-	window.addEventListener("scroll", (event) => {
-		// determine whether we're scrolling up or down
-		let scroll = this.scrollY;
-		// console.log(scroll);
-		
-		if(previousScroll <= scroll) {scrollDirection = "down"}
-		else {scrollDirection = "up"}
-		
-		previousScroll = scroll;
-		
-		
-		
-		if(!videoStarted && scroll > 300){
-			//play video on top
-			vid.play();
-			videoStarted = true;
-		}
-		
-		for(let i = 0; i < scrollAnimations.length; i++){
-			animation = scrollAnimations[i];
-		
-			// skip the ones that are irrelevant now
-			if (animation.scrollPosition < scroll - 1000) {continue;} // skip the first few animations that are out of reach
-			if (scroll < animation.scrollPositionEnd) {
-				animation.hasEnded = false;
-			}
-			if (animation.hasEnded) {continue;}
-			if (animation.scrollPosition > scroll + 1000) { // no need to even look at animations that are far out of reach
-				break; // assuming that animations are ordered and no 2 animations are playing at the same time, we can skip all the others that are out of reach
-			} 
-			
-			
-			// actual animation stuff
-			if (scrollDirection == "down"){
-				if (animation.tempo == "immediately") { // and that is why we use enums, to avoid typos
-					if (scroll >= animation.scrollPosition) { // animate
-						if(animation.type == "addClass") {animation.element.classList.add(animation.className);}
-						if(animation.type == "removeClass") {animation.element.classList.remove(animation.className);}
-						
-					}				
-				}			
-			} else { //scrollDirection up
-				if (animation.tempo == "immediately") {
-					if (scroll <= animation.scrollPosition) { // animate
-						if(animation.type == "addClass") {animation.element.classList.remove(animation.className);}
-						if(animation.type == "removeClass") {animation.element.classList.add(animation.className);}
-					}				
-				}					
-			}
-
-	
-		};
-	});  
-	
-	// animate attribute based on position
-	function animateOnScroll(id, attribute, valueBefore, valueAfter, scrollPositionStart, scrollPositionEnd) {
-		scrollAnimations.add({
-			'id': id,
-			'attribute': attribute,
-			'valueBefore': valueBefore,
-			'valueAfter': valueAfter,
-			'scrollPositionStart': scrollPositionStart,
-			'scrollPositionEnd': scrollPositionEnd
-		});
-	}
-	
-  </script>
-  
-  
-  
+ 
   
 </html>
